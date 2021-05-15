@@ -1,14 +1,14 @@
 #include "modAlphaCipher.h"
 
-string modAlphaCipher::decoder(const std::string& cipher_st) // ĞÀÑØÈÔĞÎÂÀÍÈÅ
+string modAlphaCipher::decoder(const std::string& cipher_st) // Ğ ĞĞ¡Ğ¨Ğ˜Ğ¤Ğ ĞĞ’ĞĞĞ˜Ğ•
 {
     string n_s = cipher_st;
-    int dlina, nstrok, position, a; // dlina-äëèíà ñòğîêè ; nstrok-êîëè÷åñòâî ñòğîê ; position-íîâàÿ ïîçèöèÿ ñèìâîëà, êîòîğûé ìåíÿåì ;
-    dlina = cipher_st.size(); // st-ñòğîêà ñ òåêñòîì, êîòîğûé ââîäèòñÿ ïîëüçîâàòåëåì
-    nstrok = (dlina - 1) / newkey + 1; // newkey-êîëè÷åñòâî ñòîëáöîâ â òàáëèöå
+    int dlina, nstrok, position, a; // dlina-Ğ´Ğ»Ğ¸Ğ½Ğ° ÑÑ‚Ñ€Ğ¾ĞºĞ¸ ; nstrok-ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑÑ‚Ñ€Ğ¾Ğº ; position-Ğ½Ğ¾Ğ²Ğ°Ñ Ğ¿Ğ¾Ğ·Ğ¸Ñ†Ğ¸Ñ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ğ°, ĞºĞ¾Ñ‚Ğ¾Ñ€Ñ‹Ğ¹ Ğ¼ĞµĞ½ÑĞµĞ¼ ;
+    dlina = cipher_st.size(); // st-ÑÑ‚Ñ€Ğ¾ĞºĞ° Ñ Ñ‚ĞµĞºÑÑ‚Ğ¾Ğ¼, ĞºĞ¾Ñ‚Ğ¾Ñ€Ñ‹Ğ¹ Ğ²Ğ²Ğ¾Ğ´Ğ¸Ñ‚ÑÑ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ĞµĞ¼
+    nstrok = (dlina - 1) / newkey + 1; // newkey-ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑÑ‚Ğ¾Ğ»Ğ±Ñ†Ğ¾Ğ² Ğ² Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ğµ
     a = 0;
-    for (int colum_number = newkey; colum_number > 0; colum_number--) { // colum_number-íîìåğ ñòîëáöà
-        for (int line_number = 0; line_number < nstrok; line_number++) { // line_number-íîìåğ ñòğîêè
+    for (int colum_number = newkey; colum_number > 0; colum_number--) { // colum_number-Ğ½Ğ¾Ğ¼ĞµÑ€ ÑÑ‚Ğ¾Ğ»Ğ±Ñ†Ğ°
+        for (int line_number = 0; line_number < nstrok; line_number++) { // line_number-Ğ½Ğ¾Ğ¼ĞµÑ€ ÑÑ‚Ñ€Ğ¾ĞºĞ¸
             position = newkey*line_number+colum_number; //
             if (position-1 < dlina) {
                 n_s[position-1] = cipher_st[a];
@@ -18,15 +18,15 @@ string modAlphaCipher::decoder(const std::string& cipher_st) // ĞÀÑØÈÔĞÎÂÀÍÈÅ
     }
     return n_s;
 }
-string modAlphaCipher::coder(const string& open_st) // ÇÀØÈÔĞÎÂÀÍÈÅ
+string modAlphaCipher::coder(const string& open_st) // Ğ—ĞĞ¨Ğ˜Ğ¤Ğ ĞĞ’ĞĞĞ˜Ğ•
 {
     string n_s = open_st;
-    int dlina, nstrok, position, a; // dlina-äëèíà ñòğîêè ; nstrok-êîëè÷åñòâî ñòğîê ; position-íîâàÿ ïîçèöèÿ ñèìâîëà, êîòîğûé ìåíÿåì ;
-    dlina = open_st.size(); // st-ñòğîêà ñ òåêñòîì, êîòîğûé ââîäèòñÿ ïîëüçîâàòåëåì
-    nstrok = (dlina - 1) / newkey + 1; //newkey-êîëè÷åñòâî ñòîëáöîâ â òàáëèöå
+    int dlina, nstrok, position, a; // dlina-Ğ´Ğ»Ğ¸Ğ½Ğ° ÑÑ‚Ñ€Ğ¾ĞºĞ¸ ; nstrok-ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑÑ‚Ñ€Ğ¾Ğº ; position-Ğ½Ğ¾Ğ²Ğ°Ñ Ğ¿Ğ¾Ğ·Ğ¸Ñ†Ğ¸Ñ ÑĞ¸Ğ¼Ğ²Ğ¾Ğ»Ğ°, ĞºĞ¾Ñ‚Ğ¾Ñ€Ñ‹Ğ¹ Ğ¼ĞµĞ½ÑĞµĞ¼ ;
+    dlina = open_st.size(); // st-ÑÑ‚Ñ€Ğ¾ĞºĞ° Ñ Ñ‚ĞµĞºÑÑ‚Ğ¾Ğ¼, ĞºĞ¾Ñ‚Ğ¾Ñ€Ñ‹Ğ¹ Ğ²Ğ²Ğ¾Ğ´Ğ¸Ñ‚ÑÑ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»ĞµĞ¼
+    nstrok = (dlina - 1) / newkey + 1; //newkey-ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ ÑÑ‚Ğ¾Ğ»Ğ±Ñ†Ğ¾Ğ² Ğ² Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ğµ
     a = 0;
-    for (int colum_number = newkey; colum_number > 0; colum_number--) { // colum_number-íîìåğ ñòîëáöà
-        for (int line_number = 0; line_number < nstrok; line_number++) { // line_number-íîìåğ ñòğîêè
+    for (int colum_number = newkey; colum_number > 0; colum_number--) { // colum_number-Ğ½Ğ¾Ğ¼ĞµÑ€ ÑÑ‚Ğ¾Ğ»Ğ±Ñ†Ğ°
+        for (int line_number = 0; line_number < nstrok; line_number++) { // line_number-Ğ½Ğ¾Ğ¼ĞµÑ€ ÑÑ‚Ñ€Ğ¾ĞºĞ¸
             position = colum_number+newkey*line_number;
             if (position-1 < dlina) {
                 n_s[a] = open_st[position-1];
