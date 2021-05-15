@@ -4,7 +4,7 @@ bool isValid(const string& s)
     std::locale loc("ru_RU.UTF-8");
     std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t> codec;
     std::wstring ws = codec.from_bytes(s);
-    std::string numAlpha = "ÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞß";
+    std::string numAlpha = "ĞĞ‘Ğ’Ğ“Ğ”Ğ•ĞĞ–Ğ—Ğ˜Ğ™ĞšĞ›ĞœĞĞĞŸĞ Ğ¡Ğ¢Ğ£Ğ¤Ğ¥Ğ¦Ğ§Ğ¨Ğ©ĞªĞ«Ğ¬Ğ­Ğ®Ğ¯";
     std::wstring wA = codec.from_bytes(numAlpha);
     for(unsigned int i = 0; i < ws.size(); i++) {
         if (wA.find(ws[i]) == string::npos) {
