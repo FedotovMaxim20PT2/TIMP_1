@@ -12,14 +12,14 @@ class modAlphaCipher
 {
 private:
     string numAlpha =
-        "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"; //алфавит по порядку
-    map <char,int> alphaNum; //ассоциативный массив "номер по символу"
-    vector <int> key; //ключ
-    vector<int> convert(const string& s); //преобразование строка-вектор
-    string convert(const vector<int>& v); //преобразование вектор-строка
+      "РђР‘Р’Р“Р”Р•РЃР–Р—РР™РљР›РњРќРћРџР РЎРўРЈР¤РҐР¦Р§РЁР©РЄР«Р¬Р­Р®РЇ"; //Р°Р»С„Р°РІРёС‚ РїРѕ РїРѕСЂСЏРґРєСѓ
+    map <char,int> alphaNum; //Р°СЃСЃРѕС†РёР°С‚РёРІРЅС‹Р№ РјР°СЃСЃРёРІ "РЅРѕРјРµСЂ РїРѕ СЃРёРјРІРѕР»Сѓ"
+    vector <int> key; //РєР»СЋС‡
+    vector<int> convert(const string& s); //РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ СЃС‚СЂРѕРєР°-РІРµРєС‚РѕСЂ
+    string convert(const vector<int>& v); //РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РІРµРєС‚РѕСЂ-СЃС‚СЂРѕРєР°
 public:
-    modAlphaCipher()=delete; //запретим конструктор без параметров
-    modAlphaCipher(const string& skey); //конструктор для установки ключа
-    string encrypt(const string& open_text); //зашифрование
-    string decrypt(const string& cipher_text);//расшифрование
+    modAlphaCipher()=delete; //Р·Р°РїСЂРµС‚РёРј РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+    modAlphaCipher(const string& skey); //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё РєР»СЋС‡Р°
+    string encrypt(const string& open_text); //Р·Р°С€РёС„СЂРѕРІР°РЅРёРµ
+    string decrypt(const string& cipher_text);//СЂР°СЃС€РёС„СЂРѕРІР°РЅРёРµ
 };
