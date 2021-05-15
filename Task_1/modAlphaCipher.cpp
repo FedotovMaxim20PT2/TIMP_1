@@ -1,9 +1,9 @@
 #include "modAlphaCipher.h"
 modAlphaCipher::modAlphaCipher(const string& skey)
 {
-    locale loc("ru_RU.UTF-8"); // русская локаль для корректной смены регистра
-    wstring_convert<codecvt_utf8<wchar_t>, wchar_t> codec; //кодек UTF-8
-    wstring ws = codec.from_bytes(numAlpha); // перекодируем
+    locale loc("ru_RU.UTF-8"); // СЂСѓСЃСЃРєР°СЏ Р»РѕРєР°Р»СЊ РґР»СЏ РєРѕСЂСЂРµРєС‚РЅРѕР№ СЃРјРµРЅС‹ СЂРµРіРёСЃС‚СЂР°
+    wstring_convert<codecvt_utf8<wchar_t>, wchar_t> codec; //РєРѕРґРµРє UTF-8
+    wstring ws = codec.from_bytes(numAlpha); // РїРµСЂРµРєРѕРґРёСЂСѓРµРј
     for (unsigned i=0; i<ws.size(); i++) {
         alphaNum[ws[i]]=i;
     }
@@ -31,9 +31,9 @@ string modAlphaCipher::decrypt(const string& cipher_text)
 inline vector<int> modAlphaCipher::convert(const string& s)
 {
    vector<int> result;
-    locale loc("ru_RU.UTF-8"); // русская локаль для корректной смены регистра
-    wstring_convert<codecvt_utf8<wchar_t>, wchar_t> codec; //кодек UTF-8
-    wstring ws = codec.from_bytes(s); // перекодируем
+    locale loc("ru_RU.UTF-8"); // СЂСѓСЃСЃРєР°СЏ Р»РѕРєР°Р»СЊ РґР»СЏ РєРѕСЂСЂРµРєС‚РЅРѕР№ СЃРјРµРЅС‹ СЂРµРіРёСЃС‚СЂР°
+    wstring_convert<codecvt_utf8<wchar_t>, wchar_t> codec; //РєРѕРґРµРє UTF-8
+    wstring ws = codec.from_bytes(s); // РїРµСЂРµРєРѕРґРёСЂСѓРµРј
     for (unsigned i=0; i<ws.size(); i++) {
         result.push_back(alphaNum[ws[i]]);
     }
@@ -43,8 +43,8 @@ inline vector<int> modAlphaCipher::convert(const string& s)
 inline string modAlphaCipher::convert(const vector<int>& v)
 {
     string result;
-    locale loc("ru_RU.UTF-8"); // русская локаль для корректной смены регистра
-    wstring_convert<codecvt_utf8<wchar_t>, wchar_t> codec; //кодек UTF-8
+    locale loc("ru_RU.UTF-8"); // СЂСѓСЃСЃРєР°СЏ Р»РѕРєР°Р»СЊ РґР»СЏ РєРѕСЂСЂРµРєС‚РЅРѕР№ СЃРјРµРЅС‹ СЂРµРіРёСЃС‚СЂР°
+    wstring_convert<codecvt_utf8<wchar_t>, wchar_t> codec; //РєРѕРґРµРє UTF-8
     wstring ws = codec.from_bytes(numAlpha);
     wstring result_s = codec.from_bytes("");
     for (unsigned i=0; i<v.size(); i++) {
@@ -55,8 +55,8 @@ inline string modAlphaCipher::convert(const vector<int>& v)
 }
 
     std::string result;
-    locale loc("ru_RU.UTF-8"); // русская локаль для корректной смены регистра
-    wstring_convert<codecvt_utf8<wchar_t>, wchar_t> codec; //кодек UTF-8
+    locale loc("ru_RU.UTF-8"); // СЂСѓСЃСЃРєР°СЏ Р»РѕРєР°Р»СЊ РґР»СЏ РєРѕСЂСЂРµРєС‚РЅРѕР№ СЃРјРµРЅС‹ СЂРµРіРёСЃС‚СЂР°
+    wstring_convert<codecvt_utf8<wchar_t>, wchar_t> codec; //РєРѕРґРµРє UTF-8
     wstring ws = codec.from_bytes(numAlpha);
     wstring result_s = codec.from_bytes("");
     for (unsigned i=0; i<v.size(); i++) {
