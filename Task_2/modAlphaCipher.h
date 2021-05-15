@@ -1,3 +1,4 @@
+  
 #pragma once
 #include <iostream>
 #include <string>
@@ -12,10 +13,10 @@ using namespace std;
 class modAlphaCipher
 {
 private:
-    int newkey; // количество столбцов таблицы
+    int newkey; // РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ С‚Р°Р±Р»РёС†С‹
 public:
     modAlphaCipher()=delete;
-    modAlphaCipher(const int& key) :newkey(key) {};   // конструктор
-    string coder(const string& open_st);   // зашифрование
-    string decoder(const string& cipher_st); // расшифрование 
+    modAlphaCipher(const int& key) :newkey(key) {};   // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+    string coder(const string& open_st);   // Р·Р°С€РёС„СЂРѕРІР°РЅРёРµ
+    string decoder(const string& cipher_st); // СЂР°СЃС€РёС„СЂРѕРІР°РЅРёРµ 
 };
