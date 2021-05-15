@@ -3,7 +3,7 @@
 
 bool isValid(const string& s)
 {
-    for(const auto &c:s) // öèêë ïğîõîäèò ïî âñåìó ìàññèâó è âûäàåò ñàì îáúåêò ıòîãî ìàññèâà
+    for(const auto &c:s) // Ñ†Ğ¸ĞºĞ» Ğ¿Ñ€Ğ¾Ñ…Ğ¾Ğ´Ğ¸Ñ‚ Ğ¿Ğ¾ Ğ²ÑĞµĞ¼Ñƒ Ğ¼Ğ°ÑÑĞ¸Ğ²Ñƒ Ğ¸ Ğ²Ñ‹Ğ´Ğ°ĞµÑ‚ ÑĞ°Ğ¼ Ğ¾Ğ±ÑŠĞµĞºÑ‚ ÑÑ‚Ğ¾Ğ³Ğ¾ Ğ¼Ğ°ÑÑĞ¸Ğ²Ğ°
         if (!isalpha(c) )
             return false;
     return true;
@@ -16,30 +16,30 @@ int main(int argc, char **argv)
     int key;
     string st;
     unsigned operation;
-    cout<<"ÂÂÅÄÈÒÅ ÊËŞ× (×ÈÑËÎ) : ";
+    cout<<"Ğ’Ğ’Ğ•Ğ”Ğ˜Ğ¢Ğ• ĞšĞ›Ğ®Ğ§ (Ğ§Ğ˜Ğ¡Ğ›Ğ) : ";
     cin>>key;
     if (!cin.good()) {
-        clog<<"ÊËŞ× ÍÅ ÏÎÄÕÎÄÈÒ\n";
+        clog<<"ĞšĞ›Ğ®Ğ§ ĞĞ• ĞŸĞĞ”Ğ¥ĞĞ”Ğ˜Ğ¢\n";
         return 1;
     }
-    cout<<"ÊËŞ× ÏĞÈÍßÒ\n";
+    cout<<"ĞšĞ›Ğ®Ğ§ ĞŸĞ Ğ˜ĞĞ¯Ğ¢\n";
     modAlphaCipher cipher(key);
     do {
-        cout<<"ÂÛÁÅĞÈÒÅ ÎÏÅĞÀÖÈŞ (0-ÂÛÕÎÄ, 1-ÇÀØÈÔĞÎÂÀÒÜ, 2-ĞÀÑØÈÔĞÎÂÀÒÜ): ";
+        cout<<"Ğ’Ğ«Ğ‘Ğ•Ğ Ğ˜Ğ¢Ğ• ĞĞŸĞ•Ğ ĞĞ¦Ğ˜Ğ® (0-Ğ’Ğ«Ğ¥ĞĞ”, 1-Ğ—ĞĞ¨Ğ˜Ğ¤Ğ ĞĞ’ĞĞ¢Ğ¬, 2-Ğ ĞĞ¡Ğ¨Ğ˜Ğ¤Ğ ĞĞ’ĞĞ¢Ğ¬): ";
         cin>>operation;
         if (operation > 2) {
-            cout<<"ÎØÈÁÊÀ Â ÂÛÁÎĞÅ ÎÏÅĞÀÖÈÈ\n";
+            cout<<"ĞĞ¨Ğ˜Ğ‘ĞšĞ Ğ’ Ğ’Ğ«Ğ‘ĞĞ Ğ• ĞĞŸĞ•Ğ ĞĞ¦Ğ˜Ğ˜\n";
         } else if (operation >0) {
-            cout<<"ÂÂÅÄÈÒÅ ÑÒĞÎÊÓ, ÑÎÑÒÎßÙÓŞ ÈÇ ËÀÒÈÍÈÖÛ : ";
+            cout<<"Ğ’Ğ’Ğ•Ğ”Ğ˜Ğ¢Ğ• Ğ¡Ğ¢Ğ ĞĞšĞ£, Ğ¡ĞĞ¡Ğ¢ĞĞ¯Ğ©Ğ£Ğ® Ğ˜Ğ— Ğ›ĞĞ¢Ğ˜ĞĞ˜Ğ¦Ğ« : ";
             cin>>st;
             if (isValid(st)) {
                 if (operation==1) {
-                    cout<<"ÇÀØÈÔĞÎÂÀÍÍÀß ÑÒĞÎÊÀ: "<<cipher.coder(st)<<endl;
+                    cout<<"Ğ—ĞĞ¨Ğ˜Ğ¤Ğ ĞĞ’ĞĞĞĞĞ¯ Ğ¡Ğ¢Ğ ĞĞšĞ: "<<cipher.coder(st)<<endl;
                 } else {
-                    cout<<"ĞÀÑØÈÔĞÎÂÀÍÍÀß ÑÒĞÎÊÀ: "<<cipher.decoder(st)<<endl;
+                    cout<<"Ğ ĞĞ¡Ğ¨Ğ˜Ğ¤Ğ ĞĞ’ĞĞĞĞĞ¯ Ğ¡Ğ¢Ğ ĞĞšĞ: "<<cipher.decoder(st)<<endl;
                 }
             } else {
-                cout<<"ÍÅÊÎĞĞÅÊÒÍÀß ÑÒĞÎÊÀ.\n";
+                cout<<"ĞĞ•ĞšĞĞ Ğ Ğ•ĞšĞ¢ĞĞĞ¯ Ğ¡Ğ¢Ğ ĞĞšĞ.\n";
             }
         }
     } while (operation!=0);
